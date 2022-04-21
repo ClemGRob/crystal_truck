@@ -9,7 +9,7 @@ def test_get_map():
 
 def test_move():
     truck1 = truck
-    truck1.move(3,3)
+    truck1.truck._move(3,3)
     assert truck1.x == 3
     assert truck1.y == 3
 
