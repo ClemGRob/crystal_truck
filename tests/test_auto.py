@@ -1,8 +1,8 @@
 import pytest
-from src import  game
+from src import  game,main
 
 def test_get_map():
-    result = game.get_map()
+    result = main.get_map()
     assert isinstance(result, list)
     assert result
 
