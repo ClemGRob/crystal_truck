@@ -1,0 +1,15 @@
+projet transmis des profs :
+https://github.com/vpoulailleau/crystal_trucks
+https://github.com/jorisoffouga/methode_dev_collaboratif
+https://github.com/vpoulailleau/methode_dev_collaboratif
+
+Aide git :
+https://git-scm.com/book/fr/v2
+https://doc.ubuntu-fr.org/git
+
+Installation du python 3.10 :
+https://computingforgeeks.com/how-to-install-python-on-ubuntu-linux-system/
+
+github actions auto test :
+https://www.testmo.com/guides/github-actions-test-automation
+
