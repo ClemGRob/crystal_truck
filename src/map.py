@@ -1,4 +1,4 @@
-from src.game import init_game
+from game import init_game
 from io import StringIO
 from contextlib import redirect_stdout
 
