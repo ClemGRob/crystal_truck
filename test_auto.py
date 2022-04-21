@@ -1,7 +1,15 @@
 import game
 import sys
 import io
+import pytest
 from contextlib import redirect_stdout
+
+def func(x):
+    return x + 1
+
+def test_count():
+    assert func(3) == 4
+
 
 def get_ma_map():
     f = io.StringIO()
