@@ -7,12 +7,13 @@ class map_server():
         self.plan = plana
         self.is_digging = False
 
+    def display(self):
+        for ligne in self.plan:
+            for char in ligne:
+                print(char+" ", end = '')
+            print("")
+
     def get_crystal(self, x, y):
-        # while True:
-        #     if self.is_digging == False:
-        #         self.is_digging = True
-        #         break
-        
         self.plan[x][y] = '0'
         self.is_digging = False
         

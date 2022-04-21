@@ -30,7 +30,7 @@ for i in range(len(map)) :
         if map[i][j]==' ':
             map[i][j]='0'
 
-print(bigmap.plan)
+bigmap.display()
 
 truck1 = truck.truck(bigmap,5,5)
 print(truck1.score)
@@ -38,5 +38,5 @@ truck1.check_nearby_crystol()
 print(truck1.score)
 print(truck1.x)
 print(truck1.y)
-print(bigmap.plan)
+bigmap.display()
 # truck1.start()
