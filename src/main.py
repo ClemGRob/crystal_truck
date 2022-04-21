@@ -1,8 +1,7 @@
-import src.game as game
+from src import game,truck,mapserver,map
 import sys
 import io
-import src.truck as truck
-from mapserver import map_server
+
 from contextlib import redirect_stdout
 
 def get_map():
@@ -26,7 +25,7 @@ def get_map():
         
 
 map = get_map()
-bigmap = map_server(map)
+bigmap = mapserver.map_server(map)
 i = 0
 j = 0
 for i in range(len(map)) :
