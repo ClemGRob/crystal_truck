@@ -1,4 +1,4 @@
-from src import game,truck,map
+from src import game,truck,map,mapserver
 from mapserver import map_server
 import sys
 import io
