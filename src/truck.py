@@ -1,11 +1,11 @@
 from shutil import move
 import time
 import threading
-from mapserver import map_server
+from src import mapserver
 
 class truck(threading.Thread):
 
-    def __init__(self, map:map_server, pos_x = 1, pos_y = 1):
+    def __init__(self, map:mapserver.map_server, pos_x = 1, pos_y = 1):
         threading.Thread.__init__(self)
         self.x = pos_x
         self.y = pos_y
