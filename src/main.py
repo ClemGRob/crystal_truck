@@ -1,9 +1,6 @@
 from src import game, truck, mapserver
-
-
 import sys
 import io
-from mapserver import map_server
 from contextlib import redirect_stdout
 
 def get_map():
