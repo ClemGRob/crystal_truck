@@ -1,4 +1,4 @@
-import game as game
+import src.game as game
 import sys
 import io
 import truck
