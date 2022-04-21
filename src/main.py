@@ -1,8 +1,8 @@
-import src.game as game
+import game as game
 import sys
 import io
 import truck
-from src.mapserver import map_server
+from mapserver import map_server
 from contextlib import redirect_stdout
 
 def get_ma_map():
@@ -51,4 +51,4 @@ print(bigmap.plan)
 truck1 = truck.truck(bigmap,5,5)
 
 
-# truck1.run(map)
+truck1.run(map)

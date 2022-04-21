@@ -1,7 +1,7 @@
 from shutil import move
 import time
 import threading
-from src.mapserver import map_server
+from mapserver import map_server
 
 class truck(threading.Thread):
 
