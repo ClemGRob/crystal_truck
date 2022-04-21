@@ -35,15 +35,6 @@ class truck(threading.Thread):
         self.map.get_crystal(move[0], move[1])     
         self._move(move[0], move[1])
 
-    # def run(self):
-    #     while True:
-    #         print("aa")
-    #         self.check_nearby_crystol()
-    #         print("x : "+str(self.x)+", y : "+str(self.y))
-    #         time.sleep(1)
-    #         print(self.map.plan)
-
-
 
 if __name__ == "__main__":
     thread1 = truck(1)

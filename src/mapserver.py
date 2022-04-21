@@ -1,5 +1,4 @@
 import time
-
 class map_server():
     def __init__(self, plana):
         self.plan = plana
@@ -14,3 +13,5 @@ class map_server():
     def get_crystal(self, x, y):
         self.plan[x][y] = '0'
         self.is_digging = False
+        
+

@@ -1,7 +1,10 @@
-from src import game,truck,map,mapserver
+from src import game, truck, mapserver
+
+
 import sys
 import io
-
+import truck
+from mapserver import map_server
 from contextlib import redirect_stdout
 
 def get_map():
@@ -18,10 +21,6 @@ def get_map():
         i+=1
     return map
 
-#     print(crystaux[1][1])
-#     print(crystaux[1][2])
-#     print(crystaux[1][3])
-#     print(crystaux[1][4])
         
 
 map = get_map()
@@ -33,11 +32,13 @@ for i in range(len(map)) :
         if map[i][j]==' ':
             map[i][j]='0'
 
-# print(bigmap.plan)
-bigmap.get_crystal(0,1)
-print(bigmap.plan)
+bigmap.display()
 
 truck1 = truck.truck(bigmap,5,5)
-
-
-truck1.run(map)
+print(truck1.score)
+truck1.check_nearby_crystol()
+print(truck1.score)
+print(truck1.x)
+print(truck1.y)
+bigmap.display()
+# truck1.start()
