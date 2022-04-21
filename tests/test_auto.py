@@ -1,5 +1,5 @@
 import pytest
-from src import  game,main
+from src import main
 
 def test_get_map():
     result = main.get_map()
