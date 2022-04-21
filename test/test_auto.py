@@ -1,5 +1,4 @@
 from shutil import move
-from typing_extensions import Self
 import pytest
 from src import main,truck
 
