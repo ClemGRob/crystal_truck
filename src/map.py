@@ -1,4 +1,4 @@
-from game import init_game
+from src import game 
 from io import StringIO
 from contextlib import redirect_stdout
 
@@ -25,13 +25,13 @@ class Map:
 def get_map(rand):
     f = StringIO()
     with redirect_stdout(f):
-        init_game(rand)
+        game.init_game(rand)
     return f.getvalue()
 
 
 def get_map_with_capturing(rand):
     with Capturing() as map:
-        init_game(rand)
+        game.init_game(rand)
     return map
 
 
