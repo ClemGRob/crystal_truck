@@ -1,4 +1,6 @@
-import game as game
+from src import game, truck, mapserver
+
+
 import sys
 import io
 import truck
@@ -22,7 +24,7 @@ def get_map():
         
 
 map = get_map()
-bigmap = map_server(map)
+bigmap = mapserver.map_server(map)
 i = 0
 j = 0
 for i in range(len(map)) :

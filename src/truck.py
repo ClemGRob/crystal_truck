@@ -1,11 +1,11 @@
 from shutil import move
 import time
 import threading
-from mapserver import map_server
+from src import mapserver
 
 class truck(threading.Thread):
 
-    def __init__(self, map:map_server, pos_x = 1, pos_y = 1):
+    def __init__(self, map:mapserver.map_server, pos_x = 1, pos_y = 1):
         threading.Thread.__init__(self)
         self.x = pos_x
         self.y = pos_y
@@ -34,15 +34,6 @@ class truck(threading.Thread):
         self.score += value
         self.map.get_crystal(move[0], move[1])     
         self._move(move[0], move[1])
-
-    # def run(self):
-    #     while True:
-    #         print("aa")
-    #         self.check_nearby_crystol()
-    #         print("x : "+str(self.x)+", y : "+str(self.y))
-    #         time.sleep(1)
-    #         print(self.map.plan)
-
 
 
 if __name__ == "__main__":
