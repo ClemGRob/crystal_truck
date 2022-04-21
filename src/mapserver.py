@@ -8,13 +8,13 @@ class map_server():
         self.is_digging = False
 
     def get_crystal(self, x, y):
-        while True:
-            if self.is_digging == False:
-                self.is_digging = True
-                break
-        print(self.plan)
-        print("aaaaaaaaaaaaaaaaaaaaaaaaa")
+        # while True:
+        #     if self.is_digging == False:
+        #         self.is_digging = True
+        #         break
+        
         self.plan[x][y] = '0'
+        self.is_digging = False
         
 
 

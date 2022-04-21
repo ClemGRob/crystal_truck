@@ -19,10 +19,6 @@ def get_map():
         i+=1
     return map
 
-#     print(crystaux[1][1])
-#     print(crystaux[1][2])
-#     print(crystaux[1][3])
-#     print(crystaux[1][4])
         
 
 map = get_map()
@@ -34,11 +30,13 @@ for i in range(len(map)) :
         if map[i][j]==' ':
             map[i][j]='0'
 
-# print(bigmap.plan)
-bigmap.get_crystal(0,1)
 print(bigmap.plan)
 
 truck1 = truck.truck(bigmap,5,5)
-
-
-truck1.run(map)
+print(truck1.score)
+truck1.check_nearby_crystol()
+print(truck1.score)
+print(truck1.x)
+print(truck1.y)
+print(bigmap.plan)
+# truck1.start()
