@@ -6,6 +6,7 @@ on: [push, pull_request]
 
 env:
   PYTHONPATH: ${{ github.workspace }}
+
 jobs:
   build:
 
