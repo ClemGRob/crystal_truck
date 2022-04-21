@@ -1,32 +1,30 @@
-import src.game as game
+from src import game, truck, mapserver
+
+
 import sys
 import io
 import truck
-from src.mapserver import map_server
+from mapserver import map_server
 from contextlib import redirect_stdout
 
-def get_ma_map():
+def get_map():
     f = io.StringIO()
     with redirect_stdout(f):
         game.init_game(2)
     out = f.getvalue()
     lignes = out.split('\n')
     new_lignes = lignes[5:-4]
-    crystaux = []
+    map = []
     i = 0
     for ligne in new_lignes:
-        crystaux.insert(i, [char for char in ligne] )
+        map.insert(i, [char for char in ligne] )
         i+=1
-    return crystaux
+    return map
 
-#     print(crystaux[1][1])
-#     print(crystaux[1][2])
-#     print(crystaux[1][3])
-#     print(crystaux[1][4])
         
 
-map = get_ma_map()
-bigmap = map_server(map)
+map = get_map()
+bigmap = mapserver.map_server(map)
 i = 0
 j = 0
 for i in range(len(map)) :
@@ -34,11 +32,13 @@ for i in range(len(map)) :
         if map[i][j]==' ':
             map[i][j]='0'
 
-# print(bigmap.plan)
-bigmap.get_crystal(0,1)
-print(bigmap.plan)
+bigmap.display()
 
 truck1 = truck.truck(bigmap,5,5)
-
-
-# truck1.run(map)
+print(truck1.score)
+truck1.check_nearby_crystol()
+print(truck1.score)
+print(truck1.x)
+print(truck1.y)
+bigmap.display()
+# truck1.start()
