@@ -1,7 +1,5 @@
-from time import time
-
-
 import time
+
 class map_server():
     def __init__(self, plana):
         self.plan = plana
