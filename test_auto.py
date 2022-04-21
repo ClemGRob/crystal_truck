@@ -1,10 +1,12 @@
 import pytest
+import src.main
 
 
-def func(x):
-    return x + 1
 
-def test_count():
-    assert func(3) == 4
+def test_get_map():
+    result = src.main.get_map()
+    assert isinstance(result, list)
+    assert result
 
+    
 
