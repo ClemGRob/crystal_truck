@@ -1,7 +1,7 @@
 from shutil import move
 import time
 import threading
-from mapserver import map_server
+from src import mapserver
 
 class truck(threading.Thread):
 
@@ -10,7 +10,7 @@ class truck(threading.Thread):
         self.x = pos_x
         self.y = pos_y
         self.score = 0
-        self.map = map_server(map)
+        self.map = mapserver.map_server(map)
 
     def _move(self, value_x, value_y):
         self.x =value_x
