@@ -1,7 +1,6 @@
 from shutil import move
 import time
 import threading
-from src.mapserver import map_server
 
 class truck(threading.Thread):
 
@@ -10,11 +9,12 @@ class truck(threading.Thread):
         self.x = pos_x
         self.y = pos_y
         self.score = 0
-        self.map = map_server(map)
+        self.map = map
 
     def _move(self, value_x, value_y):
         self.x =value_x
         self.y =value_y
+
     def check_nearby_crystol(self, map):
         value = 0
         move = [self.x+1,self.y]

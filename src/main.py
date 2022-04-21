@@ -19,16 +19,6 @@ def get_ma_map():
         i+=1
     return crystaux
 
-def get_map(map = "map.txt"):
-    f = open(map, "r")
-    carte = f.read()
-    lignes = carte.split('\n')
-    crystaux = []
-    i = 0
-    for ligne in lignes:
-        crystaux.insert(i, [char for char in ligne] )
-        i+=1
-    return crystaux
 #     print(crystaux[1][1])
 #     print(crystaux[1][2])
 #     print(crystaux[1][3])
