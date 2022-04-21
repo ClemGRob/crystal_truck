@@ -1,7 +1,7 @@
 import src.game as game
 import sys
 import io
-import truck
+import src.truck as truck
 from mapserver import map_server
 from contextlib import redirect_stdout
 
