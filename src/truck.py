@@ -29,15 +29,24 @@ class truck:
                         tmp_distance = self.abs_value(self.x - i) + self.abs_value(
                             self.y - j
                         )
-                        if self.y > j and flag ==False:
+                        if self.y > j:
+                            tmp_distance -= self.y 
+                        # if self.y > j and flag == False:
+                        #     distance = tmp_distance
+                        #     x_ref = i
+                        #     y_ref = j
+                        #     flag = True
+                        #     j = y_max-1
+                        #     i = x_max-1
+                        if tmp_distance < distance:
                             distance = tmp_distance
                             x_ref = i
                             y_ref = j
-                            flag = True
-                        if tmp_distance < distance and flag ==False:
-                            distance = tmp_distance
-                            x_ref = i
-                            y_ref = j
+                        # if self.y > j and tmp_distance-2 < distance:
+                        #     distance = tmp_distance
+                        #     x_ref = i
+                        #     y_ref = j
+
 
         else:
             for i in range(0, len(self.map)):
@@ -112,12 +121,3 @@ class truck:
             + "\n"
             ,name
         )
-
-
-# if __name__ == "__main__":
-#     truck1 = truck(bigmap,5,5)
-#     truck1.check_nearby_crystol()
-#     for i in range(200):
-#         x_dest, y_dest = truck1.recherch()
-#         truck1.get_path_to_destination(x_dest, y_dest)
-#         print("notre scor est de : "+ str(truck1.score))
