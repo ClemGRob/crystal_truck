@@ -16,20 +16,20 @@ def test_move():
 
 def test_move_up():
     truck1 = truck.truck(None,1,1)
-    truck1.move_up
+    truck1.move_up()
     assert truck1.y == 2
 
 def test_move_down():
     truck1 = truck.truck(None,1,1)
-    truck1.move_down
+    truck1.move_down()
     assert truck1.y == 0
 
 def test_move_left():
     truck1 = truck.truck(None,1,1)
-    truck1.move_left
+    truck1.move_left()
     assert truck1.x == 0
 
 def test_move_right():
     truck1 = truck.truck(None,1,1)
-    truck1.move_right
+    truck1.move_right()
     assert truck1.x == 2
