@@ -2,6 +2,26 @@ from shutil import move
 import pytest
 from src import truck,file_tool,map
 
+#file_tool
+
+def test_write_from_scratch():
+    name = "test.txt"
+    content ="test decriture sur le fichier"
+    file_tool.write_from_sratch(content, name )
+    with open (name, "r") as file:
+        content = file.read()
+    assert content == "test decriture sur le fichier"
+
+def test_write_new_line():
+    name = "test.txt"
+    content ="test decriture sur le fichier"
+    file_tool.write_from_sratch(content, name )
+    content2 = "test"
+    file_tool.write_new_line(content2,name)
+    with open (name, "r") as file:
+        content = file.read()
+    assert content == "test decriture sur le fichiertest"
+
 
 #truck
 
@@ -18,7 +38,7 @@ def test_abs_value():
 
 
 def test_init():
-    map1 = [["0","2","0","0"],["0","0","0""0"]]
+    map1 = [["0","2","0","0"],["0","0","0","0"]]
     truck1 =truck.truck(map1,10,10,10)
 
     assert truck1.x == 10
@@ -56,14 +76,16 @@ def test_digg():
 
 def test_recherch():
     map = [["0","2","0","0"],["0","0","0""0"]]
-    truck1 = truck.truck(map,4,4)
+    truck1 = truck.truck(map,1,1)
     x_ref,y_ref = truck1.recherch()
-    assert x_ref == 1
-    assert y_ref == 0
+    assert x_ref == 0
+    assert y_ref == 1
 
 def test_get_path_to_dest():
     map = [["0","2","0","0"],["0","0","0""0"]]
-    truck1 = truck.truck(map,4,4)
+    truck1 = truck.truck(map,1,1)
+    truck1.get_path_to_destination(0,1,turn)
+    assert truck1.map[0][1] == '1'
     truck1.get_path_to_destination(0,1,turn)
     assert truck1.map[0][1] == '0'
 
@@ -72,33 +94,14 @@ def test_wright():
     truck1 = truck.truck(None,1,1,33)
     truck1.wright(turn,"GOOD",name)
     with open (name, "r") as file:
-        content = file.read
-    assert content == "0 GOOD 33 1 1"
+        content = file.read()
+    assert content == "0 GOOD 33 1 1\n"
 
 #map
 def test_get_map():
-    result = map.get_map()
+    result,a,b,c = map.get_map()
     assert isinstance(result, list)
     assert result
-
-#file_tool
-# def test_write_from_scratch():
-#     name = "test.txt"
-#     content ="test d'écriture sur le fichier"
-#     file_tool.write_from_sratch(content, name )
-#     with open (name, "r") as file:
-#         content = file.read
-#     assert content == "test d'écriture sur le fichier"
-
-# def test_write_new_line():
-#     name = "test.txt"
-#     content ="test d'écriture sur le fichier"
-#     file_tool.write_from_sratch(content, name )
-#     content2 = "test"
-#     file_tool.write_new_line(content2,name)
-#     with open (name, "r") as file:
-#         content = file.read
-#     assert content == "test d'écriture sur le fichier test"
 
 
 
