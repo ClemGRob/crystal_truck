@@ -15,11 +15,11 @@ def test_init():
     assert truck1.id == 10
     assert truck1.map == map1
 
-def test_abs_value():
+def test_abs_value1():
     i = 3
     truck1.abs_value(i)
     assert i == 3
-    i == -5
+    i = -5
     truck1.abs_value(i)
     assert i == 5
 
