@@ -1,6 +1,5 @@
 def write_from_sratch(content, doc_name="map.txt"):
     with open(doc_name, "w") as file:
-        # content = "%s" % out, "\n"
         file.writelines(content)
 
 

@@ -13,7 +13,7 @@ class truck:
 
     def abs_value(self, a):
         if a < 0:
-            return -1*a
+            return -1 * a
         return a
 
     def recherch(self, x_min=-1, y_min=-1, x_max=-1, y_max=-1):
@@ -30,7 +30,7 @@ class truck:
                             self.y - j
                         )
                         if self.y > j:
-                            tmp_distance -= self.y 
+                            tmp_distance -= self.y
                         # if self.y > j and flag == False:
                         #     distance = tmp_distance
                         #     x_ref = i
@@ -47,7 +47,6 @@ class truck:
                         #     x_ref = i
                         #     y_ref = j
 
-
         else:
             for i in range(0, len(self.map)):
                 for j in range(0, len(self.map[i])):
@@ -63,51 +62,51 @@ class truck:
         # print("\nmeilleur : \ndistance : "+str(distance)+" x_ref : "+str(x_ref)+" y_ref "+str(y_ref))
         return x_ref, y_ref
 
-    def get_path_to_destination(self, x_dest, y_dest, turn):
+    def get_path_to_destination(self, x_dest, y_dest, turn, text_name):
         local_turn = turn
         while self.y != y_dest or self.x != x_dest:
 
             if self.y < y_dest:
                 local_turn += 1
-                self.move_up(local_turn)
+                self.move_up(local_turn, text_name)
             if self.y > y_dest:
                 local_turn += 1
-                self.move_down(local_turn)
+                self.move_down(local_turn, text_name)
             if self.x < x_dest:
                 local_turn += 1
-                self.move_right(local_turn)
+                self.move_right(local_turn, text_name)
             if self.x > x_dest:
                 local_turn += 1
-                self.move_left(local_turn)
+                self.move_left(local_turn, text_name)
         local_turn += 1
-        self.digg(local_turn)
+        self.digg(local_turn, text_name)
         return local_turn
 
-    def move_up(self, turn):
+    def move_up(self, turn, text_name):
         self.y += 1
-        self.wright(turn)
+        self.wright(turn, "MOVE", text_name)
 
-    def move_down(self, turn):
+    def move_down(self, turn, text_name):
         self.y -= 1
-        self.wright(turn)
+        self.wright(turn, "MOVE", text_name)
 
-    def move_left(self, turn):
+    def move_left(self, turn, text_name):
         self.x -= 1
-        self.wright(turn)
+        self.wright(turn, "MOVE", text_name)
 
-    def move_right(self, turn):
+    def move_right(self, turn, text_name):
         self.x += 1
-        self.wright(turn)
+        self.wright(turn, "MOVE", text_name)
 
-    def digg(self, turn):
+    def digg(self, turn, text_name):
         self.score += int(self.map[self.x][self.y])
         if self.map[self.x][self.y] == "2":
             self.map[self.x][self.y] = "1"
         else:
             self.map[self.x][self.y] = "0"
-        self.wright(turn=turn, action="DIG")
+        self.wright(turn=turn, action="DIG", name=text_name)
 
-    def wright(self, turn=0, action="MOVE", name = "map.txt"):
+    def wright(self, turn=0, action="MOVE", name="map.txt"):
         file_tool.write_new_line(
             str(turn)
             + " "
@@ -118,18 +117,6 @@ class truck:
             + str(self.y)
             + " "
             + str(self.x)
-            + "\n"
-            ,name
+            + "\n",
+            name,
         )
-<<<<<<< HEAD
-
-
-# if __name__ == "__main__":
-#     truck1 = truck(bigmap,5,5)
-#     truck1.check_nearby_crystol()
-#     for i in range(200):
-#         x_dest, y_dest = truck1.recherch()
-#         truck1.get_path_to_destination(x_dest, y_dest)
-#         print("notre scor est de : "+ str(truck1.score))
-=======
->>>>>>> 5483ceec37f41f1c0b0afa27400e240f81bb936d
