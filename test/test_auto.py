@@ -1,6 +1,7 @@
 from shutil import move
 import pytest
-from src import main,truck,file_tool
+from src import truck,file_tool
+import main
 
 #truck
 truck1 = truck.truck(None,1,1)
