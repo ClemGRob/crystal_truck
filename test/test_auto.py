@@ -49,29 +49,34 @@ def test_init():
 
 def test_move_up():
     truck1 = truck.truck(None,1,1)
-    truck1.move_up(turn)
+    fichier = "test1.txt"
+    truck1.move_up(turn,fichier)
     assert truck1.y == 2
 
 def test_move_down():
     truck1 = truck.truck(None,1,1)
-    truck1.move_down(turn)
+    fichier = "test1.txt"
+    truck1.move_down(turn,fichier)
     assert truck1.y == 0
 
 def test_move_left():
+    fichier = "test1.txt"
     truck1 = truck.truck(None,1,1)
-    truck1.move_left(turn)
+    truck1.move_left(turn,fichier)
     assert truck1.x == 0
 
 def test_move_right():
     truck1 = truck.truck(None,1,1)
-    truck1.move_right(turn)
+    fichier = "test1.txt"
+    truck1.move_right(turn,fichier)
     assert truck1.x == 2
 
 def test_digg():
     map = [["0","2","0","0"],["0","0","0""0"]]
     truck1 = truck.truck(map,0,1)
-    truck1.digg(turn)
-    truck1.digg(turn)
+    fichier = "test1.txt"
+    truck1.digg(turn,fichier)
+    truck1.digg(turn,fichier)
     assert truck1.map[0][1] == '0'
 
 def test_recherch():
@@ -84,9 +89,10 @@ def test_recherch():
 def test_get_path_to_dest():
     map = [["0","2","0","0"],["0","0","0""0"]]
     truck1 = truck.truck(map,1,1)
-    truck1.get_path_to_destination(0,1,turn)
+    fichier = "test1.txt"
+    truck1.get_path_to_destination(0,1,turn,fichier)
     assert truck1.map[0][1] == '1'
-    truck1.get_path_to_destination(0,1,turn)
+    truck1.get_path_to_destination(0,1,turn,fichier)
     assert truck1.map[0][1] == '0'
 
 def test_wright():
