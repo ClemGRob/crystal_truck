@@ -18,8 +18,4 @@ def print_doc(doc_name = "map_bis.txt"):
 		content = file.read()
 		print(content)
 		file.close()
-
-
-
-def test_write_from_scratch():
 	
