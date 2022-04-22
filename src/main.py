@@ -1,4 +1,4 @@
-from src import game, truck, mapserver
+import game, truck, mapserver
 
 
 import sys
