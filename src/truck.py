@@ -86,7 +86,7 @@ class truck():
     def digg(self):
         self.score+=int(self.map[self.x][self.y])
         if self.map[self.x][self.y]=='2':
-            self.map[self.x][self.y]=='1'
+            self.map[self.x][self.y]='1'
         else:
             self.map[self.x][self.y]='0'
         self.wright(action = "DIGG")
