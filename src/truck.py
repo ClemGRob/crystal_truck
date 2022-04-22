@@ -14,7 +14,7 @@ class truck:
         if a < 0:
             return -1*a
         return a
-        
+
     def recherch(self, x_min=-1, y_min=-1, x_max=-1, y_max=-1):
         distance = 1000
         x_ref = -1
