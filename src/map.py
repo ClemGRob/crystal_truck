@@ -1,4 +1,4 @@
-from src import game
+from src import game, file_tool
 import sys
 import io
 from contextlib import redirect_stdout
@@ -9,6 +9,7 @@ def get_map(map_id = 4):
         game.init_game(map_id)
     out = f.getvalue()
     lignes = out.split('\n')
+    file_tool.write_from_sratch(out)
     new_lignes = lignes[5:-4]
     map = []
     i = 0
