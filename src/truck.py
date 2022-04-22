@@ -96,11 +96,7 @@ class truck():
     def digg(self,turn):
         self.score+=int(self.map[self.x][self.y])
         if self.map[self.x][self.y]=='2':
-<<<<<<< HEAD
-            self.map[self.x][self.y] ='1'
-=======
             self.map[self.x][self.y]='1'
->>>>>>> 68991efb8f38e48e2f32c1570f5c3e5b60730490
         else:
             self.map[self.x][self.y]='0'
         self.wright(turn=turn,action = "DIG")
