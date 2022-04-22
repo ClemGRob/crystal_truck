@@ -54,6 +54,10 @@ python3 main.py
 python3 src/viewer.py -i map.txt
 
 # Drive x truck on map 4
+python3 multiple_truck_line.py [Maps_value] name_map.txt # (future main) ask the Maps_value
+python3 src/viewer.py -i name_map.txt
+
+Exemple :
 python3 multiple_truck_line.py 4 map.txt # (future main) ask the map 4
 python3 src/viewer.py -i map.txt
 
