@@ -1,4 +1,5 @@
 from shutil import move
+from unicodedata import name
 import pytest
 from src import truck,file_tool
 import main
@@ -63,10 +64,12 @@ def test_get_path_to_dest():
     assert truck1.map[0][1] == '0'
 
 def test_wright():
-  truck1 = truck.truck(None,1,1,33)
-  truck1.wright(turn,action = "GOOD")
-  assert 
-
+    name = "map1.txt"
+    truck1 = truck.truck(None,1,1,33)
+    truck1.wright(turn,"GOOD",name)
+    with open (name, "r") as file:
+        content = file.read
+    assert content == "0 GOOD 33 1 1"
 
 #map
 def test_get_map():
