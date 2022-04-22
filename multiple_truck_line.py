@@ -13,10 +13,13 @@ def mutiple_truck():
     for numcamion in range(nbcamion):
         print("nous en somes au camion : " + str(numcamion))
         x_min = int(len(carte) * numcamion / nbcamion)
+        # x_min = int(len(carte) * (nbcamion-numcamion) / nbcamion)
+        # x_max = int(len(carte) * (nbcamion-numcamion+1) / nbcamion)
+        # print("x min :  "+str(x_min))
+        # print("x max :  "+str(x_max))
         y_min = 0
         x_max = int(len(carte) * (numcamion + 1) / nbcamion)
-    #   x_max = int(len(carte) * (numcamion + numcamion) / (nbcamion*nbcamion))
-
+        
         y_max = len(carte[0])
 
         print(y_max)
