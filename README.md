@@ -49,16 +49,12 @@ conda activate V_env_gestion_projet
 pip install arcade
 pip install serial
 
-# Drive one truck
-python3 main.py 
-python3 src/viewer.py -i map.txt
-
-# Drive x truck on map 4
-python3 multiple_truck_line.py [Maps_value] name_map.txt # (future main) ask the Maps_value
-python3 src/viewer.py -i name_map.txt
+# use the code
+python3 main.py [Maps_value] [name_doc].txt 
+python3 src/viewer.py -i [name_doc].txt
 
 Exemple :
-python3 multiple_truck_line.py 4 map.txt # (future main) ask the map 4
+python3 main.py 4 map.txt 
 python3 src/viewer.py -i map.txt
 
 ```
