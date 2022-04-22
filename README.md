@@ -47,15 +47,15 @@ pip install serial
 
 # Drive one truck
 python3 main.py 
-python3 src/viewer.py -i map_bis.txt
+python3 src/viewer.py -i map.txt
 
 # Drive x truck on the specific place
 python3 multiple_truck_zone.py # les 4 camions mais sous forme de zones délimité
-python3 src/viewer.py -i map_bis.txt
+python3 src/viewer.py -i map.txt
 
 # Drive x truck on linear place
 python3 multiple_truck_line.py # les 4 camions avec une zones spécifiques en lignes
-python3 src/viewer.py -i map_bis.txt
+python3 src/viewer.py -i map.txt
 
 ```
 
