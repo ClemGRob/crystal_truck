@@ -121,15 +121,3 @@ class truck:
             + "\n"
             ,name
         )
-<<<<<<< HEAD
-
-
-# if __name__ == "__main__":
-#     truck1 = truck(bigmap,5,5)
-#     truck1.check_nearby_crystol()
-#     for i in range(200):
-#         x_dest, y_dest = truck1.recherch()
-#         truck1.get_path_to_destination(x_dest, y_dest)
-#         print("notre scor est de : "+ str(truck1.score))
-=======
->>>>>>> 5483ceec37f41f1c0b0afa27400e240f81bb936d

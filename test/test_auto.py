@@ -1,5 +1,4 @@
 from shutil import move
-from unicodedata import name
 import pytest
 from src import truck,file_tool
 import main
