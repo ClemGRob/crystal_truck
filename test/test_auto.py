@@ -95,10 +95,10 @@ def test_get_path_to_dest():
     truck1.get_path_to_destination(0,1,turn,fichier)
     assert truck1.map[0][1] == '0'
 
-def test_wright():
+def test_write():
     name = "map1.txt"
     truck1 = truck.truck(None,1,1,33)
-    truck1.wright(turn,"GOOD",name)
+    truck1.write(turn,"GOOD",name)
     with open (name, "r") as file:
         content = file.read()
     assert content == "0 GOOD 33 1 1\n"
