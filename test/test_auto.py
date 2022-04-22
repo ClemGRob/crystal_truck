@@ -82,23 +82,23 @@ def test_get_map():
     assert result
 
 #file_tool
-def test_write_from_scratch():
-    name = "test.txt"
-    content ="test d'écriture sur le fichier"
-    file_tool.write_from_sratch(content, name )
-    with open (name, "r") as file:
-        content = file.read
-    assert content == "test d'écriture sur le fichier"
+# def test_write_from_scratch():
+#     name = "test.txt"
+#     content ="test d'écriture sur le fichier"
+#     file_tool.write_from_sratch(content, name )
+#     with open (name, "r") as file:
+#         content = file.read
+#     assert content == "test d'écriture sur le fichier"
 
-def test_write_new_line():
-    name = "test.txt"
-    content ="test d'écriture sur le fichier"
-    file_tool.write_from_sratch(content, name )
-    content2 = "test"
-    file_tool.write_new_line(content2,name)
-    with open (name, "r") as file:
-        content = file.read
-    assert content == "test d'écriture sur le fichier test"
+# def test_write_new_line():
+#     name = "test.txt"
+#     content ="test d'écriture sur le fichier"
+#     file_tool.write_from_sratch(content, name )
+#     content2 = "test"
+#     file_tool.write_new_line(content2,name)
+#     with open (name, "r") as file:
+#         content = file.read
+#     assert content == "test d'écriture sur le fichier test"
 
 
 
