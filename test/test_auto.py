@@ -1,17 +1,18 @@
 from shutil import move
 import pytest
-from src import truck,file_tool
-import main
+from src import truck,file_tool,map
+
 
 #truck
-truck1 = truck.truck(None,1,1)
+
 turn = 0
 
 def test_abs_value():
+    truck1 = truck.truck(None,1,1)
     a = 1
     i = -1
-    truck1.abs_value(a)
-    truck1.abs_value(i)
+    a = truck1.abs_value(a)
+    i = truck1.abs_value(i)
     assert a == 1
     assert i == 1
 
@@ -27,18 +28,22 @@ def test_init():
 
 
 def test_move_up():
+    truck1 = truck.truck(None,1,1)
     truck1.move_up(turn)
     assert truck1.y == 2
 
 def test_move_down():
+    truck1 = truck.truck(None,1,1)
     truck1.move_down(turn)
     assert truck1.y == 0
 
 def test_move_left():
+    truck1 = truck.truck(None,1,1)
     truck1.move_left(turn)
     assert truck1.x == 0
 
 def test_move_right():
+    truck1 = truck.truck(None,1,1)
     truck1.move_right(turn)
     assert truck1.x == 2
 
@@ -53,8 +58,8 @@ def test_recherch():
     map = [["0","2","0","0"],["0","0","0""0"]]
     truck1 = truck.truck(map,4,4)
     x_ref,y_ref = truck1.recherch()
-    assert x_ref == 0
-    assert y_ref == 1 
+    assert x_ref == 1
+    assert y_ref == 0
 
 def test_get_path_to_dest():
     map = [["0","2","0","0"],["0","0","0""0"]]
@@ -72,7 +77,7 @@ def test_wright():
 
 #map
 def test_get_map():
-    result = main.get_map()
+    result = map.get_map()
     assert isinstance(result, list)
     assert result
 
