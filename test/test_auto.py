@@ -6,6 +6,16 @@ import main
 #truck
 truck1 = truck.truck(None,1,1)
 turn = 0
+
+def test_abs_value():
+    a = 1
+    i = -1
+    truck1.abs_value(a)
+    truck1.abs_value(i)
+    assert a == 1
+    assert i == 1
+
+
 def test_init():
     map1 = [["0","2","0","0"],["0","0","0""0"]]
     truck1 =truck.truck(map1,10,10,10)
