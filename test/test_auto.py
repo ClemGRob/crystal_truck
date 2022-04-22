@@ -62,10 +62,11 @@ def test_get_path_to_dest():
     truck1.get_path_to_destination(0,1,turn)
     assert truck1.map[0][1] == '0'
 
-# def test_wright():
-#     truck1 = truck.truck(None,1,1)
-#     truck1.wright(action = "GOOD")
-#     assert 
+def test_wright():
+  truck1 = truck.truck(None,1,1,33)
+  truck1.wright(turn,action = "GOOD")
+  assert 
+
 
 #map
 def test_get_map():
@@ -86,7 +87,6 @@ def test_write_new_line():
     name = "test.txt"
     content ="test d'écriture sur le fichier"
     file_tool.write_from_sratch(content, name )
-
     content2 = "test"
     file_tool.write_new_line(content2,name)
     with open (name, "r") as file:
@@ -95,7 +95,3 @@ def test_write_new_line():
 
 
 
-#def test_wright():
-#   truck1 = truck.truck(None,1,1)
-#   truck1.wright(action = "GOOD")
-#   assert 
