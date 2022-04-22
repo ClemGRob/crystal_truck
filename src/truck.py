@@ -92,13 +92,7 @@ class truck():
         print(action)
         pass
 
-if __name__ == "__main__":
-    truck1 = truck(bigmap,5,5)
-    truck1.check_nearby_crystol()
-    for i in range(200):
-        x_dest, y_dest = truck1.recherch()
-        truck1.get_path_to_destination(x_dest, y_dest)
-        print("notre scor est de : "+ str(truck1.score))
+
    
 
 
