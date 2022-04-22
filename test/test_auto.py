@@ -38,5 +38,6 @@ def test_digg():
     map = [["0","2","0","0"],["0","0","0""0"]]
     truck1 = truck.truck(map,0,1)
     truck1.digg()
+    truck1.digg()
     assert truck1.map[0][1] == '0'
 
