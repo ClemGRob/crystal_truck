@@ -2,7 +2,15 @@ from shutil import move
 import pytest
 from src import main,truck
 
+def test_init():
+    map = [["0","2","0","0"],["0","0","0""0"]]
+    truck1 =truck.truck(map,10,10,10)
 
+    assert truck1.x == 10
+    assert truck1.y == 10
+    assert truck1.id == 10
+    assert truck1.map == [["0","2","0","0"],["0","0","0""0"]]
+    
 def test_get_map():
     result = main.get_map()
     assert isinstance(result, list)
@@ -41,3 +49,7 @@ def test_digg():
     truck1.digg()
     assert truck1.map[0][1] == '0'
 
+def test_wright():
+    truck1 = truck.truck(None,1,1)
+    truck1.wright(action = "GOOD")
+    assert 
