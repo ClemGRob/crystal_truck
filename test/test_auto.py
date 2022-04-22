@@ -1,5 +1,3 @@
-from shutil import move
-import pytest
 from src import truck, file_tool, map
 
 # file_tool

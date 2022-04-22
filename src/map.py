@@ -1,5 +1,4 @@
 from src import game, file_tool
-import sys
 import io
 from contextlib import redirect_stdout
 

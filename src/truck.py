@@ -1,5 +1,3 @@
-from enum import Flag
-from shutil import move
 from src import file_tool
 
 
