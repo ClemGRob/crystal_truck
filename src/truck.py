@@ -15,24 +15,24 @@ class truck():
         self.x =value_x
         self.y =value_y
 
-    def check_nearby_crystol(self):
-        value = 0
-        move = [self.x+1,self.y]
-        if int(self.map[self.x+1][self.y])>value:
-            value = int(self.map[self.x+1][self.y])
-            move = [self.x+1,self.y]
-        if int(self.map[self.x][self.y-1])>value:
-            value = int(self.map[self.x][self.y-1])
-            move = [self.x,self.y-1]
-        if int(self.map[self.x-1][self.y])>value:
-            value = int(self.map[self.x-1][self.y])
-            move = [self.x-1,self.y]
-        if int(self.map[self.x][self.y+1])>value:
-            value = int(self.map[self.x][self.y+1])
-            move = [self.x,self.y+1]
-        self.score += value
-        self.map.get_crystal(move[0], move[1])     
-        self._move(move[0], move[1])
+    # def check_nearby_crystol(self):
+    #     value = 0
+    #     move = [self.x+1,self.y]
+    #     if int(self.map[self.x+1][self.y])>value:
+    #         value = int(self.map[self.x+1][self.y])
+    #         move = [self.x+1,self.y]
+    #     if int(self.map[self.x][self.y-1])>value:
+    #         value = int(self.map[self.x][self.y-1])
+    #         move = [self.x,self.y-1]
+    #     if int(self.map[self.x-1][self.y])>value:
+    #         value = int(self.map[self.x-1][self.y])
+    #         move = [self.x-1,self.y]
+    #     if int(self.map[self.x][self.y+1])>value:
+    #         value = int(self.map[self.x][self.y+1])
+    #         move = [self.x,self.y+1]
+    #     self.score += value
+    #     self.map.get_crystal(move[0], move[1])     
+    #     self._move(move[0], move[1])
 
     def abs_value(self, i):
         if i > 0 : 

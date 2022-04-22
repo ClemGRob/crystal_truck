@@ -1,7 +1,6 @@
 from shutil import move
-from . import main
 import pytest
-from src import truck
+from src import main,truck,file_tool
 
 #truck
 truck1 = truck.truck(None,1,1)
@@ -65,13 +64,31 @@ def test_get_path_to_dest():
     truck1.get_path_to_destination(0,1)
     assert truck1.map[0][1] == '0'
 
-
-
-#main
+#map
 def test_get_map():
     result = main.get_map()
     assert isinstance(result, list)
     assert result
+
+#file_tool
+def test_write_from_scratch():
+    name = "test.txt"
+    content ="test d'écriture sur le fichier"
+    file_tool.write_from_sratch(content, name )
+    with open (name, "r") as file:
+        content = file.read
+    assert content == "test d'écriture sur le fichier"
+
+def test_write_new_line():
+    name = "test.txt"
+    content ="test d'écriture sur le fichier"
+    file_tool.write_from_sratch(content, name )
+
+    content2 = "test"
+    file_tool.write_new_line(content2,name)
+    with open (name, "r") as file:
+        content = file.read
+    assert content == "test d'écriture sur le fichier test"
 
 
 
