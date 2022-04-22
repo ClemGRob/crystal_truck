@@ -22,7 +22,6 @@ def test_abs_value():
     truck1.abs_value(i)
     assert i == 5
 
-
 def test_move_up():
     truck1.move_up()
     assert truck1.y == 2
@@ -63,6 +62,11 @@ def test_get_path_to_dest():
     truck1 = truck.truck(map,4,4)
     truck1.get_path_to_destination(0,1)
     assert truck1.map[0][1] == '0'
+
+# def test_wright():
+#     truck1 = truck.truck(None,1,1)
+#     truck1.wright(action = "GOOD")
+#     assert 
 
 #map
 def test_get_map():
