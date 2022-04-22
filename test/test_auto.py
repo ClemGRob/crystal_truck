@@ -51,7 +51,13 @@ def test_digg():
     truck1.digg()
     assert truck1.map[0][1] == '0'
 
-def test_recherch
+def test_recherch():
+    map = [["0","2","0","0"],["0","0","0""0"]]
+    truck1 = truck.truck(map,4,4)
+    x_ref,y_ref = truck1.recherch()
+    assert x_ref == 0
+    assert y_ref == 1 
+
 def test_get_path_to_dest():
     map = [["0","2","0","0"],["0","0","0""0"]]
     truck1 = truck.truck(map,4,4)
