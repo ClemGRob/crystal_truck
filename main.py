@@ -13,7 +13,6 @@ for i in range(len(carte)):
 
 truck1 = truck.truck(carte, 0, 0)
 
-# truck1.check_nearby_crystol()
 turn = 0
 for i in range(200):
     x_dest, y_dest = truck1.recherch()
