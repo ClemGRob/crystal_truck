@@ -84,19 +84,19 @@ class truck:
 
     def move_up(self, turn, text_name):
         self.y += 1
-        self.wright(turn, "MOVE", text_name)
+        self.write(turn, "MOVE", text_name)
 
     def move_down(self, turn, text_name):
         self.y -= 1
-        self.wright(turn, "MOVE", text_name)
+        self.write(turn, "MOVE", text_name)
 
     def move_left(self, turn, text_name):
         self.x -= 1
-        self.wright(turn, "MOVE", text_name)
+        self.write(turn, "MOVE", text_name)
 
     def move_right(self, turn, text_name):
         self.x += 1
-        self.wright(turn, "MOVE", text_name)
+        self.write(turn, "MOVE", text_name)
 
     def digg(self, turn, text_name):
         self.score += int(self.map[self.x][self.y])
@@ -104,9 +104,9 @@ class truck:
             self.map[self.x][self.y] = "1"
         else:
             self.map[self.x][self.y] = "0"
-        self.wright(turn=turn, action="DIG", name=text_name)
+        self.write(turn=turn, action="DIG", name=text_name)
 
-    def wright(self, turn=0, action="MOVE", name="map.txt"):
+    def write(self, turn=0, action="MOVE", name="map.txt"):
         file_tool.write_new_line(
             str(turn)
             + " "
