@@ -3,7 +3,6 @@ from src import game, truck
 
 import sys
 import io
-import truck
 from contextlib import redirect_stdout
 
 def get_map(map_id = 4):
