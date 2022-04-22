@@ -38,24 +38,28 @@ Start!
 ## Command line interface
 
 ```
-Utilisation du projet : (avec miniconda) # initialisation phase
+# Utilisation du projet : (avec miniconda) # initialisation phase
 Module load miniconda
 conda create --name V_env_gestion_projet python=3.10
+
+# activate the virtual environnement
 conda activate V_env_gestion_projet
+
+# Add librairy
 pip install arcade
 pip install serial
 
 # Drive one truck
 python3 main.py 
-python3 src/viewer.py -i map_bis.txt
+python3 src/viewer.py -i map.txt
 
-# Drive x truck on the specific place
-python3 multiple_truck_zone.py # les 4 camions mais sous forme de zones délimité
-python3 src/viewer.py -i map_bis.txt
+# Drive x truck on map 4
+python3 multiple_truck_line.py [Maps_value] name_map.txt # (future main) ask the Maps_value
+python3 src/viewer.py -i name_map.txt
 
-# Drive x truck on linear place
-python3 multiple_truck_line.py # les 4 camions avec une zones spécifiques en lignes
-python3 src/viewer.py -i map_bis.txt
+Exemple :
+python3 multiple_truck_line.py 4 map.txt # (future main) ask the map 4
+python3 src/viewer.py -i map.txt
 
 ```
 
