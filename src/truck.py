@@ -1,4 +1,5 @@
 from shutil import move
+from src import file_tool
 
 class truck():
 
@@ -55,45 +56,53 @@ class truck():
         print("\nmeilleur : \ndistance : "+str(distance)+" x_ref : "+str(x_ref)+" y_ref "+str(y_ref))
         return x_ref, y_ref
     
-    def get_path_to_destination(self, x_dest, y_dest):
+    def get_path_to_destination(self, x_dest, y_dest, turn):
+        local_turn = turn
         while self.y != y_dest or self.x != x_dest:
+            
             if self.y < y_dest:
-                self.move_up()
+                local_turn +=1
+                self.move_up(local_turn)
             if self.y > y_dest:
-                self.move_down()
+                local_turn +=1
+                self.move_down(local_turn)
             if self.x < x_dest:
-                self.move_right()
+                local_turn +=1
+                self.move_right(local_turn)
             if self.x > x_dest:
-                self.move_left()
-        self.digg()
+                local_turn +=1
+                self.move_left(local_turn)
+        local_turn+=1
+        self.digg(local_turn)
+        return local_turn
 
-    def move_up(self):
+
+    def move_up(self, turn):
         self.y+=1
-        self.wright()
+        self.wright(turn)
     
-    def move_down(self):
+    def move_down(self,turn):
         self.y-=1
-        self.wright()
+        self.wright(turn)
     
-    def move_left(self):
+    def move_left(self,turn):
         self.x-=1
-        self.wright()
+        self.wright(turn)
     
-    def move_right(self):
+    def move_right(self,turn):
         self.x +=1
-        self.wright()
+        self.wright(turn)
 
-    def digg(self):
+    def digg(self,turn):
         self.score+=int(self.map[self.x][self.y])
         if self.map[self.x][self.y]=='2':
-            self.map[self.x][self.y]=='1'
+            self.map[self.x][self.y]='1'
         else:
             self.map[self.x][self.y]='0'
-        self.wright(action = "DIGG")
+        self.wright(turn=turn,action = "DIG")
     
-    def wright(self,action="MOVE"):
-        print(action)
-        pass
+    def wright(self,turn = 0, action="MOVE"):
+        file_tool.write_new_line(str(turn)+" "+action+" "+str(self.id)+" "+str(self.y)+" "+str(self.x)+"\n")
 
 # if __name__ == "__main__":
 #     truck1 = truck(bigmap,5,5)
@@ -103,5 +112,3 @@ class truck():
 #         truck1.get_path_to_destination(x_dest, y_dest)
 #         print("notre scor est de : "+ str(truck1.score))
    
-
-
