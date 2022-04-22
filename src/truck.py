@@ -98,7 +98,7 @@ class truck:
             self.map[self.x][self.y] = "0"
         self.wright(turn=turn, action="DIG")
 
-    def wright(self, turn=0, action="MOVE"):
+    def wright(self, turn=0, action="MOVE", name = "map.txt"):
         file_tool.write_new_line(
             str(turn)
             + " "
@@ -110,6 +110,7 @@ class truck:
             + " "
             + str(self.x)
             + "\n"
+            ,name
         )
 
 
