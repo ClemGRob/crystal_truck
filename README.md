@@ -2,7 +2,7 @@
 
 This is a game replay player for a text game. With some trucks, you have to collect crystals the fastest way.
 
-AJOUTER L4IMAGE DE NOTRE TRAVAIL (![screenshot](crystals_vs_trucks.png))
+![screenshot](images/Capture_plateau.png)
 
 ## Contraint
 * Python 3.10 on the computer
@@ -38,16 +38,25 @@ Start!
 ## Command line interface
 
 ```
-usage: viewer.py [-h] (-i PATH | -s COM1)
+Utilisation du projet : (avec miniconda) # initialisation phase
+Module load miniconda
+conda create --name V_env_gestion_projet python=3.10
+conda activate V_env_gestion_projet
+pip install arcade
+pip install serial
 
-Viewer for crystals vs trucks.
+# Drive one truck
+python3 main.py 
+python3 src/viewer.py -i map_bis.txt
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -i PATH, --input PATH
-                        path of the file containing commands
-  -s COM1, --serial-port COM1
-                        name of the serial device (115200 8N1)
+# Drive x truck on the specific place
+python3 multiple_truck_zone.py # les 4 camions mais sous forme de zones délimité
+python3 src/viewer.py -i map_bis.txt
+
+# Drive x truck on linear place
+python3 multiple_truck_line.py # les 4 camions avec une zones spécifiques en lignes
+python3 src/viewer.py -i map_bis.txt
+
 ```
 
 ## Viewer keys
@@ -195,29 +204,5 @@ Start!
 8 DIG 5 0 9
 8 MOVE 0 0 6
 ```
-
-Il est possible de capturer le résultat des `print` pour les traiter ensuite, avec `redirect_stdout` par exemple (https://stackoverflow.com/a/40984270/12199445).
-
-## Algorithme
-
-Allez d'abord au plus simple, afin d'avoir très vite un projet fonctionnel :
-* pilotez un seul camion avec une double boucle sur les X et les Y, en creusant si un cristal est disponible
-* pilotez ensuite un seul camion en allant au cristal le plus proche
-* pilotez ensuite plusieurs camions qui collaborent
-
-## Intégration continue
-
-Mise en place de tests unitaires et d'intégration, joués en automatique sur GitHub à chaque pull request.
-
-Mise en place de qualimétrie (flake8 ? black ?)
-
-## Évaluation
-
-* Présentation orale par équipe (30 minutes)
-  * Présentation de la structure du code et des algorithmes principaux
-  * Présentation de la méthodologie de test
-  * Présentation de la qualimétrie
-  * Présentation de l'automatisation (intégration continue)
-  * Compétition : mesures des scores sur quelques cartes, pour avoir un meilleur score que les autres équipes
-  * Note de groupe
-
+## RESULTAT:
+![screenshot](images/Capture_result.png)
