@@ -18,7 +18,6 @@ class truck:
         distance = 1000
         x_ref = -1
         y_ref = 0
-        flag = False
         if y_max != -1:
             for j in range(y_min, y_max):
                 for i in range(x_min, x_max):
@@ -29,22 +28,10 @@ class truck:
                         )
                         if self.y > j:
                             tmp_distance -= self.y
-                        # if self.y > j and flag == False:
-                        #     distance = tmp_distance
-                        #     x_ref = i
-                        #     y_ref = j
-                        #     flag = True
-                        #     j = y_max-1
-                        #     i = x_max-1
                         if tmp_distance < distance:
                             distance = tmp_distance
                             x_ref = i
                             y_ref = j
-                        # if self.y > j and tmp_distance-2 < distance:
-                        #     distance = tmp_distance
-                        #     x_ref = i
-                        #     y_ref = j
-
         else:
             for i in range(0, len(self.map)):
                 for j in range(0, len(self.map[i])):
@@ -52,12 +39,10 @@ class truck:
                         tmp_distance = self.abs_value(self.x - i) + self.abs_value(
                             self.y - j
                         )
-                        # print("distance : "+str(tmp_distance)+" x_ref : "+str(self.abs_value(self.x-i))+" y_ref "+str(self.abs_value(self.y-j)))
                         if tmp_distance < distance:
                             distance = tmp_distance
                             x_ref = i
                             y_ref = j
-        # print("\nmeilleur : \ndistance : "+str(distance)+" x_ref : "+str(x_ref)+" y_ref "+str(y_ref))
         return x_ref, y_ref
 
     def get_path_to_destination(self, x_dest, y_dest, turn, text_name):
