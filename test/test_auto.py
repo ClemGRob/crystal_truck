@@ -1,6 +1,7 @@
 from shutil import move
+from . import main
 import pytest
-from src import main,truck
+from src import truck
 
 def test_get_map():
     result = main.get_map()
