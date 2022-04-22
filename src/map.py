@@ -4,13 +4,13 @@ import io
 from contextlib import redirect_stdout
 
 
-def get_map(map_id=4):
+def get_map(map_id=4, text_name="map.txt"):
     f = io.StringIO()
     with redirect_stdout(f):
         game.init_game(map_id)
     out = f.getvalue()
     lignes = out.split("\n")
-    file_tool.write_from_sratch(out)
+    file_tool.write_from_sratch(out, text_name)
     new_lignes = lignes[5:-4]
     map = []
     i = 0
