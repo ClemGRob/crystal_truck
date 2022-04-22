@@ -2,7 +2,7 @@
 
 This is a game replay player for a text game. With some trucks, you have to collect crystals the fastest way.
 
-AJOUTER L4IMAGE DE NOTRE TRAVAIL (![screenshot](crystals_vs_trucks.png))
+![screenshot](images/Capture_plateau.png)
 
 ## Contraint
 * Python 3.10 on the computer
@@ -204,3 +204,5 @@ Start!
 8 DIG 5 0 9
 8 MOVE 0 0 6
 ```
+## RESULTAT:
+![screenshot](images/Capture_result.png)
