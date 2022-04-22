@@ -19,24 +19,47 @@ def get_map(map_id = 4):
         i+=1
     return map
 
-        
+def get_map_from_txt(map = "map.txt"):
+    f = open(map, "r")
+    carte = f.read()
+    lignes = carte.split('\n')
+    crystaux = []
+    i = 0
+    for ligne in lignes:
+        crystaux.insert(i, [char for char in ligne] )
+        i+=1
+    return crystaux[5:int(lignes[2][-2:])+5]
+    # return lignes[2][-2:]
 
+
+
+
+# tuttut = truck.truck(None, 1, 1)
+# tuttut.move_down()
+# print(tuttut.y)
+
+print(get_map_from_txt())
 map = get_map(18)
-i = 0
-j = 0
-for i in range(len(map)) :
-    for j in range(len(map[i])):
-        if map[i][j]==' ':
-            map[i][j]='0'
+print("\n\n\n")
+print(map)
 
-truck1 = truck.truck(map,5,5)
 
-#truck1.check_nearby_crystol()
-for i in range(200):
-    x_dest, y_dest = truck1.recherch()
-    if x_dest == -1:
-        break
-    truck1.get_path_to_destination(x_dest, y_dest)
-    print("notre score est de : "+ str(truck1.score))
+
+# i = 0
+# j = 0
+# for i in range(len(map)) :
+#     for j in range(len(map[i])):
+#         if map[i][j]==' ':
+#             map[i][j]='0'
+
+# truck1 = truck.truck(map,5,5)
+
+# #truck1.check_nearby_crystol()
+# for i in range(200):
+#     x_dest, y_dest = truck1.recherch()
+#     if x_dest == -1:
+#         break
+#     truck1.get_path_to_destination(x_dest, y_dest)
+#     print("notre score est de : "+ str(truck1.score))
    
 

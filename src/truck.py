@@ -1,8 +1,8 @@
-# from shutil import move
+from shutil import move
 
 class truck():
 
-    def __init__(self, map, pos_x = 1, pos_y = 1, id = 0):
+    def __init__(self, map = None, pos_x = 1, pos_y = 1, id = 0):
         # threading.Thread.__init__(self)
         self.x = pos_x
         self.y = pos_y
@@ -85,14 +85,23 @@ class truck():
 
     def digg(self):
         self.score+=int(self.map[self.x][self.y])
-        self.map[self.x][self.y]='0'
+        if self.map[self.x][self.y]=='2':
+            self.map[self.x][self.y]=='1'
+        else:
+            self.map[self.x][self.y]='0'
         self.wright(action = "DIGG")
     
     def wright(self,action="MOVE"):
         print(action)
         pass
 
-
+# if __name__ == "__main__":
+#     truck1 = truck(bigmap,5,5)
+#     truck1.check_nearby_crystol()
+#     for i in range(200):
+#         x_dest, y_dest = truck1.recherch()
+#         truck1.get_path_to_destination(x_dest, y_dest)
+#         print("notre scor est de : "+ str(truck1.score))
    
 
 
