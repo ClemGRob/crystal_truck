@@ -1,3 +1,4 @@
+from enum import Flag
 from shutil import move
 from src import file_tool
 
@@ -19,19 +20,25 @@ class truck:
         distance = 1000
         x_ref = -1
         y_ref = 0
+        flag = False
         if y_max != -1:
-            for i in range(x_min, x_max):
-                for j in range(y_min, y_max):
+            for j in range(y_min, y_max):
+                for i in range(x_min, x_max):
                     print(str(i) + " " + str(j))
                     if self.map[i][j] != "0":
                         tmp_distance = self.abs_value(self.x - i) + self.abs_value(
                             self.y - j
                         )
-                        # print("distance : "+str(tmp_distance)+" x_ref : "+str(self.abs_value(self.x-i))+" y_ref "+str(self.abs_value(self.y-j)))
-                        if tmp_distance < distance:
+                        if self.y > j and flag ==False:
                             distance = tmp_distance
                             x_ref = i
                             y_ref = j
+                            flag = True
+                        if tmp_distance < distance and flag ==False:
+                            distance = tmp_distance
+                            x_ref = i
+                            y_ref = j
+
         else:
             for i in range(0, len(self.map)):
                 for j in range(0, len(self.map[i])):
