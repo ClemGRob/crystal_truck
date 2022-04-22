@@ -1,7 +1,7 @@
 from src import file_tool, game, truck, map
 
 
-carte, a = map.get_map(18)
+carte,a,b,c = map.get_map(18)
 
 
 i = 0

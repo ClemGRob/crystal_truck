@@ -3,7 +3,7 @@ from src import truck, map
 
 
 def mutiple_truck():
-    carte, nbcamion, width, long = map.get_map(18)
+    carte, nbcamion, width, long = map.get_map(3)
     i = 0
     j = 0
     for i in range(len(carte)):
@@ -11,7 +11,7 @@ def mutiple_truck():
             if carte[i][j] == " ":
                 carte[i][j] = "0"
     for numcamion in range(nbcamion):
-        print("nous en somes au camion : " + str(numcamion))
+        print("nous en sommes au camion : " + str(numcamion))
         x_min = int(len(carte) * numcamion / nbcamion)
         # x_min = int(len(carte) * (nbcamion-numcamion) / nbcamion)
         # x_max = int(len(carte) * (nbcamion-numcamion+1) / nbcamion)
