@@ -1,4 +1,4 @@
-
+from src import game
 import sys
 import io
 from contextlib import redirect_stdout
