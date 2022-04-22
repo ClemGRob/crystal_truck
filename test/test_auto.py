@@ -9,8 +9,8 @@ def test_init():
     assert truck1.x == 10
     assert truck1.y == 10
     assert truck1.id == 10
-    assert truck1.map == [["0","2","0","0"],["0","0","0""0"]]
-    
+    assert truck1.map == map
+
 def test_get_map():
     result = main.get_map()
     assert isinstance(result, list)
