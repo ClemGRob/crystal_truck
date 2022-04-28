@@ -19,14 +19,14 @@ def get_map(map_id=4, text_name="map.txt"):
     return map, int(lignes[0][-1]), int(lignes[1][-2:]), int(lignes[2][-2:])
 
 
-def get_map_from_txt(map="map.txt"):
-    f = open(map, "r")
-    carte = f.read()
-    lignes = carte.split("\n")
-    crystaux = []
-    i = 0
-    for ligne in lignes:
-        crystaux.insert(i, [char for char in ligne])
-        i += 1
-    return crystaux[5 : int(lignes[2][-2:]) + 5]
+# def get_map_from_txt(map="map.txt"):
+#     f = open(map, "r")
+#     carte = f.read()
+#     lignes = carte.split("\n")
+#     crystaux = []
+#     i = 0
+#     for ligne in lignes:
+#         crystaux.insert(i, [char for char in ligne])
+#         i += 1
+#     return crystaux[5 : int(lignes[2][-2:]) + 5]
     # return lignes[2][-2:]
