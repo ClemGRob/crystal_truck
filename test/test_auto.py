@@ -92,12 +92,14 @@ def test_recherch():
     assert x_ref == 0
     assert y_ref == 1
 
+
 def test_recherch2():
     map = [["0", "2", "0", "0"], ["0", "0", "0" "0"]]
     truck1 = truck.truck(map, 1, 1)
-    x_ref, y_ref = truck1.recherch(0,0,4,4)
+    x_ref, y_ref = truck1.recherch(0, 0, 4, 4)
     assert x_ref == 0
     assert y_ref == 1
+
 
 def test_get_path_to_dest():
     map = [["0", "2", "0", "0"], ["0", "0", "0" "0"]]
