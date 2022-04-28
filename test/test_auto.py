@@ -113,9 +113,9 @@ def test_get_path_to_dest():
     map = [["2", "0", "0", "0"], ["0", "0", "0" "0"]]
     truck1 = truck.truck(map, 1, 1)
     fichier = "test1.txt"
-    truck1.get_path_to_destination(0, 1, turn, fichier)
+    truck1.get_path_to_destination(0, 0, turn, fichier)
     assert truck1.map[0][0] == "1"
-    truck1.get_path_to_destination(0, 1, turn, fichier)
+    truck1.get_path_to_destination(0, 0, turn, fichier)
     assert truck1.map[0][0] == "0"
 
 
@@ -123,9 +123,9 @@ def test_get_path_to_dest2():
     map = [["0", "0", "0", "0"], ["0", "2", "0" "2"]]
     truck1 = truck.truck(map, 0, 0)
     fichier = "test1.txt"
-    truck1.get_path_to_destination(1, 0, turn, fichier)
+    truck1.get_path_to_destination(1, 1, turn, fichier)
     assert truck1.map[1][1] == "1"
-    truck1.get_path_to_destination(1, 0, turn, fichier)
+    truck1.get_path_to_destination(1, 1, turn, fichier)
     assert truck1.map[1][1] == "0"
 
 
