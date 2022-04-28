@@ -1,4 +1,3 @@
-from statistics import multimode
 from src import truck, map
 import sys
 

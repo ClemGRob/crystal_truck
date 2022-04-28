@@ -28,5 +28,5 @@ def get_map_from_txt(map="map.txt"):
     for ligne in lignes:
         crystaux.insert(i, [char for char in ligne])
         i += 1
-    return crystaux[5: int(lignes[2][-2:]) + 5]
+    return crystaux[5 : int(lignes[2][-2:]) + 5]
     # return lignes[2][-2:]

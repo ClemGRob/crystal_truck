@@ -55,5 +55,6 @@ def display_cristals(width, height, cristals):
         print()
     print("### End Grid ###")
 
+
 if __name__ == "__main__":
     init_game(1)

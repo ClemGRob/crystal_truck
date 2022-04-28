@@ -5,8 +5,6 @@ import datetime
 import arcade
 import serial
 
-# TODO faire une interface graphique pour choisir le port COM
-# TODO mettre la grille dans une classe à part, ne mettre à jour la grille que si on change de tour, pour limiter les calculs
 
 SCREEN_WIDTH = 1024
 SCREEN_HEIGHT = 500
@@ -34,9 +32,7 @@ class Truck:
     def move(self, turn, x, y):
         self.movements[turn] = (x, y)
         if not (self.x - 1 <= x <= self.x + 1 and self.y - 1 <= y <= self.y + 1):
-            print(
-                f"invalid move, too far away, turn {turn} to {x} {y} from {self.x} {self.y}"
-            )
+            print(f" {turn} to {x} {y}  {self.x} {self.y}")
         if self.x < x:
             self.x += 1
         elif self.x > x:
@@ -206,42 +202,42 @@ class CrystalsVsTrucksGameView(arcade.View):
             self.commands_history[(turn, truck_id)] = (command, args)
         if command == "MOVE":
             if len(args) != 3:
-                print("invalid move command, must have 3 arguments", command, args)
+                print("", command, args)
                 return
             truck_id, x, y = (int(a) for a in args)
             if not 0 <= truck_id < self.commands.nb_trucks:
-                print("invalid move command, invalid truck id", command, args)
+                print(" id", command, args)
                 return
             if not 0 <= x < self.commands.grid_width:
-                print("invalid move command, invalid x", command, args)
+                print(" x", command, args)
                 return
             if not 0 <= y < self.commands.grid_height:
-                print("invalid move command, invalid y", command, args)
+                print("invalid y", command, args)
                 return
             self.trucks[truck_id].move(turn, x, y)
         elif command == "DIG":
             if len(args) != 3:
-                print("invalid dig command, must have 3 arguments", command, args)
+                print("invalid ", command, args)
                 return
             truck_id, x, y = (int(a) for a in args)
             if not 0 <= truck_id < self.commands.nb_trucks:
-                print("invalid dig command, invalid truck id", command, args)
+                print(" id", command, args)
                 return
             if not 0 <= x < self.commands.grid_width:
-                print("invalid dig command, invalid x", command, args)
+                print(" x", command, args)
                 return
             if not 0 <= y < self.commands.grid_height:
-                print("invalid dig command, invalid y", command, args)
+                print("iy", command, args)
                 return
             truck = self.trucks[truck_id]
             truck.position_at(self.clock)
             if x != truck.x or y != truck.y:
-                print("invalid dig command, cannot dig on non current position")
+                print(" current position")
                 print(f"    {truck_id=} {truck.x=} {truck.y=} dig at {x=} {y=}")
                 return
             self.grid[y][x] = max(0, self.grid[y][x] - 1)
         else:
-            print("invalid command", command, args)
+            print("", command, args)
 
     def on_key_press(self, key, key_modifiers):
         """
