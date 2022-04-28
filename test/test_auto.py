@@ -108,6 +108,7 @@ def test_recherch3():
     assert x_ref == 0
     assert y_ref == 1
 
+
 def test_get_path_to_dest():
     map = [["0", "2", "0", "0"], ["0", "0", "0" "0"]]
     truck1 = truck.truck(map, 0, 0)
@@ -116,6 +117,7 @@ def test_get_path_to_dest():
     assert truck1.map[0][1] == "1"
     truck1.get_path_to_destination(0, 1, turn, fichier)
     assert truck1.map[0][1] == "0"
+
 
 def test_get_path_to_dest2():
     map = [["0", "0", "0", "0"], ["2", "0", "0" "0"]]
