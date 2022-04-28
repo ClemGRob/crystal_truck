@@ -84,12 +84,6 @@ def test_digg():
     truck1.digg(turn, fichier)
     assert truck1.map[0][1] == "0"
 
-def test_digg2():
-    map = [["0", "1", "0", "0"], ["0", "0", "0" "0"]]
-    truck1 = truck.truck(map, 0, 1)
-    fichier = "test1.txt"
-    truck1.digg(turn, fichier)
-    assert truck1.map[0][1] == "0"
 
 def test_recherch():
     map = [["0", "2", "0", "0"], ["0", "0", "0" "0"]]
