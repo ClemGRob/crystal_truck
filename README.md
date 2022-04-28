@@ -9,11 +9,11 @@ This is a game replay player for a text game. With some trucks, you have to coll
 * Teamworker of 3 peoples with git on github by "pull requests"
 
 Our code will communicate with text files with the game interface.
-The file 'game.py' can be use for generate a maps to solve.
+The file 'file_tool.py' can be use for generate a file .txt to solve.
+
+Initialization of map 
 
 ```python3
->>> import game
->>> game.init_game(4)
 trucks: 6
 width: 28
 height: 11
