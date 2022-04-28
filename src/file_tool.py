@@ -9,7 +9,3 @@ def write_new_line(content, doc_name="map.txt"):
         file.writelines(content)
 
 
-def print_doc(doc_name="map.txt"):
-    with open(doc_name, "r") as file:
-        content = file.read()
-        print(content)
