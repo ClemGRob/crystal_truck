@@ -124,9 +124,9 @@ def test_get_path_to_dest2():
     truck1 = truck.truck(map, 1, 1)
     fichier = "test1.txt"
     truck1.get_path_to_destination(0, 1, turn, fichier)
-    assert truck1.map[0][1] == "1"
+    assert truck1.map[1][0] == "1"
     truck1.get_path_to_destination(0, 1, turn, fichier)
-    assert truck1.map[0][1] == "0"
+    assert truck1.map[1][0] == "0"
 
 
 def test_write():
